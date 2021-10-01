@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %}
+<title>Edit To-do</title>
+{% endblock title %} {% block body %}
+<h3>Edit To-do</h3>
+{% from "formhelpers.html" import render_field %}
+<form method="post">
+  <dl>
+    {{ form.csrf_token }} {{ render_field(form.content, class="form-control mb-5
+    p-3", id="wmd-input", rows="15") }}
+  </dl>
+  <input type="submit" value="Update" class="btn btn-primary" />
+  <a href="/cancel" class="btn btn-danger">Cancel</a>
+</form>
+{% endblock body %}

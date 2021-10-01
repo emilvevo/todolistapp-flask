@@ -1,0 +1,31 @@
+.container {
+  background-color: #713ef0;
+  min-height: 85vh;
+  box-shadow: 10px 10px 12px 0px rgba(0, 0, 0, 0.7);
+  -webkit-box-shadow: 10px 10px 12px 0px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 10px 10px 12px 0px rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.add:hover {
+  background: #42b72ae0 !important;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.todo {
+  width: 15rem;
+  height: 15rem;
+  background-color: cornflowerblue;
+  position: relative;
+  border-left: 3px solid #713ef0;
+  border-bottom: 3px solid #713ef0;
+  border-radius: 10px;
+  word-wrap: break-word;
+}
+
+.main {
+  flex-wrap: wrap;
+}

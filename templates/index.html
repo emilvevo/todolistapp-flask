@@ -1,0 +1,69 @@
+{% extends 'base.html' %} {% block title %} <title>Home</title> {% endblock
+title %} {% block body %}
+<div class="title" style="display: flex; justify-content: center">
+  <h3 style="flex-grow: 1">{{session["username"]}}'s To-do List</h3>
+
+  <a href="/newtodo"
+    ><button
+      class="add"
+      style="
+        background-color: #42b72a;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+      "
+    >
+      +
+    </button></a
+  >
+  <a href="/logout"><button class="btn btn-danger ml-3">Logout</button></a>
+</div>
+<hr color="white" />
+<div class="main d-flex">
+  {% if result > 0 %} {% for todo in todos %}
+  <div class="todo p-4 col-12 col-lg-4 col-md-6">
+    <p>{{todo.content}}</p>
+    <small
+      style="
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        color: rgba(255, 255, 255, 0.514);
+      "
+      >{{todo.date}}</small
+    >
+    <a
+      href="/delete/{{todo.id}}"
+      style="
+        text-decoration: none;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: red;
+      "
+      ><i class="far fa-minus-square"></i
+    ></a>
+    <a
+      href="/edit/{{todo.id}}"
+      style="
+        text-decoration: none;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 5px;
+        right: 50px;
+        color: blue;
+      "
+      ><i class="far fa-edit"></i
+    ></a>
+  </div>
+  {% endfor %} {% else %}
+  <h4 class="m-5">You don't have any to-do's, want to create one? ↗</h4>
+  {% endif %}
+  <!-- body  -->
+</div>
+{% endblock body %}
